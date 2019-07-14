@@ -1,0 +1,11 @@
+{
+    "name": "dionbosschieter/news",
+    "description": "News reader",
+    "authors": [
+        {
+            "name": "Dion Bosschieter",
+            "email": "dbosschieter@transip.nl"
+        }
+    ],
+    "require": {}
+}
