@@ -1,10 +1,11 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body {
-        padding-top: 14px;
         font-family: "DejaVu Sans Mono", Monospaced, Ubuntu, Serif;
         font-size: 1em;
         margin: 0 auto;
         max-width: 700px;
+        padding: 14px;
     }
     a {
         color: #000;
