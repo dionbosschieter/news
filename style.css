@@ -1,0 +1,14 @@
+html {
+    background-color: black;
+}
+#content {
+    font-family: "DejaVu Sans Mono", Monospaced, Ubuntu, Serif;
+    font-size: 1.2em;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 14px;
+    color: #ccc;
+}
+a {
+    color: #eee;
+}

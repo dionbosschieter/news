@@ -1,17 +1,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    body {
-        font-family: "DejaVu Sans Mono", Monospaced, Ubuntu, Serif;
-        font-size: 1em;
-        margin: 0 auto;
-        max-width: 700px;
-        padding: 14px;
-    }
-    a {
-        color: #000;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
 <body>
+<div id="content">
 <?php
 
 function readArticle($article) {
@@ -32,4 +22,5 @@ function write($message) {
 readArticle($_GET['link']);
 
 ?>
+</div>
 </body>
