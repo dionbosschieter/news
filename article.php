@@ -5,7 +5,15 @@
 <?php
 
 function readArticle($article) {
-    $content = file_get_contents('http://www.nrc.nl/' . $article);
+    $context = stream_context_create([
+      'http'=> [
+        'protocol_version' => 1.0,
+        'method'           => "GET",
+        'header'           => "Accept-language: en\r\n",
+        'user_agent'       => $_SERVER['HTTP_USER_AGENT'] ?? 'curl/7.81.0'
+      ]
+    ]);
+    $content = file_get_contents('http://www.nrc.nl/' . $article, false, $context);
 
     preg_match('/<div class="content article__content">\s+(.*?)\s+<\/div>/sm', $content, $matches);
 

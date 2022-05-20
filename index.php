@@ -1,5 +1,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+    body {
+        font-family: "DejaVu Sans Mono", Monospaced, Courier, Ubuntu, Serif;
+        font-size: 1em;
+        margin: 0 auto;
+        max-width: 700px;
+        padding: 14px 14px;
+    }
+    a {
+        color: #000;
+    }
+</style>
 <body>
 <?php
 
@@ -7,7 +18,15 @@ function write($message) {
     echo $message . '<br>' . PHP_EOL;
 }
 
-$content = file_get_contents('https://www.nrc.nl/');
+$context = stream_context_create([
+  'http'=> [
+    'protocol_version' => 1.0,
+    'method'           => "GET",
+    'header'           => "Accept-language: en\r\n",
+    'user_agent'       => $_SERVER['HTTP_USER_AGENT'] ?? 'curl/7.81.0'
+  ]
+]);
+$content = file_get_contents('https://www.nrc.nl/', false, $context);
 
 function getNewsForDate(DateTime $date) {
     global $content;
