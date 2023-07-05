@@ -25,6 +25,8 @@ COPY nginx-site.conf /etc/nginx/sites-enabled/default
 
 RUN echo "#!/usr/bin/env bash\nservice nginx start\nphp-fpm" > /etc/entrypoint.sh
 
+RUN chmod +x /etc/entrypoint.sh
+
 RUN mkdir /var/www/news
 COPY index.php /var/www/news
 COPY article.php /var/www/news
